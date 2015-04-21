@@ -1,5 +1,7 @@
 open System
 
+#load "/Code/Globs/ConnStrings.fsx"
+
 type PortalId = 
     Bikesales = 140964 | Bikepoint = 521967
 
@@ -21,5 +23,3 @@ let portals = [
 ]
 
 
-let ScarlettProductionConnectionString = "server=stg-ho-sql-02s;database=Scarlett;Trusted_Connection=true;";
-let ScarlettDevConnectionString = "server=cssvrstgsql2;database=Scarlett;Trusted_Connection=true;";

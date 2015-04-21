@@ -3,6 +3,7 @@ open System.Data
 open System.Data.SqlClient
 
 #load "./Rainbow.fsx"
+#load "/Code/Globs/ConnStrings.fsx"
 
 // let boatsales = Rainbow.portals |> List.find(fun p -> p.PortalAlias.Equals("boatsalesau"))
 // let bikesales = Rainbow.Portal.Bikesales
@@ -11,7 +12,7 @@ open System.Data.SqlClient
 type RewriteTarget = { Id: int; Name: string; TemplateUrl: string; Location: string;}
 
 let getResult<'a> sql (getItemFromReader : SqlDataReader -> 'a) = 
-    use connection = new SqlConnection(Rainbow.ScarlettDevConnectionString)
+    use connection = new SqlConnection(ConnStrings.ScarlettDevConnectionString)
     let command = new SqlCommand(sql, connection)
     try
         connection.Open()
